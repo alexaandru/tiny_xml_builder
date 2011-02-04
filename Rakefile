@@ -17,6 +17,6 @@ Bones {
   url          'http://rubygems.com/gems/tiny_xml_builder'
   readme_file  'README.txt'
   ignore_file  '.gitignore'
-  depend_on    'blankslate'
+#  depend_on    'blankslate'
 #  use_gmail
 }
