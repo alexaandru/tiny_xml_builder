@@ -2,7 +2,6 @@ Tiny XML Builder
 ================
 Alexandru Ungur <alexaandru@gmail.com>
 :icons:
-:toc:
 :website: http://github.com/alexaandru/tiny_xml_builder
 
 Description
@@ -21,18 +20,17 @@ The BlankSlate "mechanism" is copied directly from his tips at: http://onestepba
 
 Features/Problems
 -----------------
- - You cannot have XML elements named _\__id\___, _\__send___, _method_missing_, _instance_eval_ or _respond_to_ as those are NOT undefined (on purpose) by BlankSlate mechanism;
- - There are other limitations related to ``implicit receiver'' calls, e.g.:
+ - You cannot have XML elements named __id__, __send__, method_missing, instance_eval or respond_to as those are NOT undefined by BlankSlate mechanism;
+ - There are other limitations related to "implicit receiver" calls, e.g.:
 
 .Explicit receiver example
-[source,ruby]
+[code,ruby]
 -------------------------------------------------------------------------
 puts TinyXml::Builder.new.foo {|f| f.p 'bar'} # explicit receiver for 'p'
 -------------------------------------------------------------------------
 
 will output:
 
-[source,html]
 ------------
 <foo>
   <p>bar</p>
@@ -42,14 +40,13 @@ will output:
 while the following:
 
 .Implicit receiver example
-[source,ruby]
+[code,ruby]
 ---------------------------------------------------------------------
 puts TinyXml::Builder.new.foo { p 'bar' } # implicit receiver for 'p'
 ---------------------------------------------------------------------
 
 will output:
 
-[source,html]
 ------
 "bar"
 <foo>
@@ -62,7 +59,6 @@ Synopsis
 --------
 
 .Example Usage
-[source,ruby]
 -----------------------------------------------------------------------------------------
 builder = TinyXml::Builder.new
 builder.html do |xhtml|
@@ -83,7 +79,6 @@ puts builder
 -----------------------------------------------------------------------------------------
 
 .Alternate Example Usage
-[source,ruby]
 -----------------------------------------------------------------------------------------
 puts TinyXml::Builder.new.html {
   head {
@@ -103,7 +98,6 @@ puts TinyXml::Builder.new.html {
 
 both will output:
 
-[source,html]
 -----------------------------------------------------------------------------------------
 <html>
   <head>
@@ -161,4 +155,4 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-// vim: set syntax=asciidoc:
+# vim: set syntax=asciidoc:
