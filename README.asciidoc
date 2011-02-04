@@ -2,6 +2,7 @@ Tiny XML Builder
 ================
 Alexandru Ungur <alexaandru@gmail.com>
 :icons:
+:toc:
 :website: http://github.com/alexaandru/tiny_xml_builder
 
 Description
@@ -20,11 +21,10 @@ The BlankSlate "mechanism" is copied directly from his tips at: http://onestepba
 
 Features/Problems
 -----------------
- - You cannot have XML elements named __id__, __send__, method_missing, instance_eval or respond_to as those are NOT undefined by BlankSlate mechanism;
- - There are other limitations related to "implicit receiver" calls, e.g.:
+ - You cannot have XML elements named _\__id\___, _\__send___, _method_missing_, _instance_eval_ or _respond_to_ as those are NOT undefined (on purpose) by BlankSlate mechanism;
+ - There are other limitations related to ``implicit receiver'' calls, e.g.:
 
 .Explicit receiver example
-[code,ruby]
 -------------------------------------------------------------------------
 puts TinyXml::Builder.new.foo {|f| f.p 'bar'} # explicit receiver for 'p'
 -------------------------------------------------------------------------
@@ -40,7 +40,6 @@ will output:
 while the following:
 
 .Implicit receiver example
-[code,ruby]
 ---------------------------------------------------------------------
 puts TinyXml::Builder.new.foo { p 'bar' } # implicit receiver for 'p'
 ---------------------------------------------------------------------
@@ -98,7 +97,6 @@ puts TinyXml::Builder.new.html {
 
 both will output:
 
-[source,html]
 -----------------------------------------------------------------------------------------
 <html>
   <head>
