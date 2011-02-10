@@ -14,7 +14,7 @@ Bones {
   version      ver
   authors      'Alexandru Ungur'
   email        'alexaandru@gmail.com'
-  url          'http://rubygems.com/gems/tiny_xml_builder'
+  url          'http://rubygems.org/gems/tiny_xml_builder'
   readme_file  'README.asciidoc'
   ignore_file  '.gitignore'
   depend_on    'blankslate'
