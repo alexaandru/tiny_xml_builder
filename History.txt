@@ -1,3 +1,8 @@
+== 0.0.3 / 2011-02-04
+* 2 more enhancements
+  * Using the blankslate gem now for our blankslating needs (instead of embedding it);
+  * Tested and working against Ruby {1.8.7, 1.9.2} and JRuby {1.5.6}
+
 == 0.0.2 / 2011-02-03
 
 * 1 other major enhancement

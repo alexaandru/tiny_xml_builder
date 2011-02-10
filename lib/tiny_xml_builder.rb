@@ -1,5 +1,9 @@
+require 'rubygems'
+require 'blankslate'
+
 module TinyXml
-  class Builder < Class.new {instance_methods.each{|m| undef_method(m) unless m =~ /^__|instance_eval|respond_to\?/}}
+  class Builder < BlankSlate
+    reveal :respond_to? unless RUBY_VERSION >= '1.9'
     def initialize(opts = {}, &block)
       @xml          = []
       @indent_level = opts[:indent_level] || opts['indent_level'] || 0
@@ -13,6 +17,10 @@ module TinyXml
 
     def to_s
       @xml.join("\n")
+    end
+
+    def to_ary
+      [to_s]
     end
 
     def method_missing(tag, *args, &block)

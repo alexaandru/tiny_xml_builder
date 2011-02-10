@@ -10,14 +10,15 @@ Description
 
 A very simple XML builder class. +
 I wanted something really simple that I could easily extend myself later on if I needed to. +
-Ironically, in four years since I created it, I never needed to extend it :-)
+Ironically, in four years since I created and used TinyXml, I never needed to extend it :-)
 I figured, it may as well work for others in that case, so here it is.
 
 Acknowledgements
 ----------------
 
 A big thanks to Jim Weirich for his great advices on Ruby-talk. +
-The BlankSlate "mechanism" is copied directly from his tips at: http://onestepback.org/index.cgi/Tech/Ruby/BlankSlate.rdoc
+The BlankSlate "mechanism" he describes at: http://onestepback.org/index.cgi/Tech/Ruby/BlankSlate.rdoc
+and which this library depends upon, is one of the first things I've learnt when started to play with Ruby DSLs.
 
 Features/Problems
 -----------------
@@ -25,9 +26,9 @@ Features/Problems
  - There are other limitations related to ``implicit receiver'' calls, e.g.:
 
 .Explicit receiver example
--------------------------------------------------------------------------
-puts TinyXml::Builder.new.foo {|f| f.p 'bar'} # explicit receiver for 'p'
--------------------------------------------------------------------------
+---------------------------------------------
+puts TinyXml::Builder.new.foo {|f| f.p 'bar'}
+---------------------------------------------
 
 will output:
 
@@ -40,9 +41,9 @@ will output:
 while the following:
 
 .Implicit receiver example
----------------------------------------------------------------------
-puts TinyXml::Builder.new.foo { p 'bar' } # implicit receiver for 'p'
----------------------------------------------------------------------
+-----------------------------------------
+puts TinyXml::Builder.new.foo { p 'bar' }
+-----------------------------------------
 
 will output:
 
@@ -117,7 +118,7 @@ both will output:
 Requirements
 ------------
 
- - NONE
+NONE
 
 Install
 -------
@@ -131,9 +132,7 @@ License
 
 (The MIT License)
 
-Copyright (c) 2010 Alexandru Ungur, except for BlankSlate
-mechanism (line 2 in lib/tiny_xml_builder.rb) which is
-Copyright (c) Jim Weirich.
+Copyright (c) 2010 Alexandru Ungur
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
