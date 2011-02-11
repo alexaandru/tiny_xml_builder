@@ -1,3 +1,8 @@
+== 0.0.4 / 2011-02-11
+* very minor release
+  * corrected the project url
+  * prepared the gem for rubygems-test
+
 == 0.0.3 / 2011-02-04
 * 2 more enhancements
   * Using the blankslate gem now for our blankslating needs (instead of embedding it);
