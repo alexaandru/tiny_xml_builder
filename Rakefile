@@ -18,4 +18,6 @@ Bones {
   readme_file  'README.asciidoc'
   ignore_file  '.gitignore'
   depend_on    'blankslate'
+  depend_on    'bones',      :development => true
+  depend_on    'bones-rcov', :development => true
 }
